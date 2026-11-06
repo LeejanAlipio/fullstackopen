@@ -6,7 +6,7 @@ sequenceDiagram
   browser->>server: user submits a new notes through form
   Note right of server: receives the request
   Note right of server: saves the new note in the notes
-  server-->browser: updates data.json
-  Note left of browser: browser runs JavaScript when new notes are added because of event listener
-  browser-->server: reload the page with the new notes
+  Note right of server: updates data.json
+  server-->browser: execute JavaScript when new notes are added because of event listener
+  note left of browser: reload the page with the new notes JS fetched
 ```
