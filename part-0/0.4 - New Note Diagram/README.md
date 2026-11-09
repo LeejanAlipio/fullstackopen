@@ -7,6 +7,6 @@ sequenceDiagram
   Note right of server: receives the request
   Note right of server: saves the new note in the notes
   Note right of server: updates data.json
-  server-->browser: execute JavaScript when new notes are added because of event listener
+  server-->browser: execute JavaScript when new notes are added
   note left of browser: reload the page with the new notes JS fetched
 ```
