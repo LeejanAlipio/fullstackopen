@@ -1,2 +1,2 @@
-# fullstackopen
-A repo for all exercises in FSO
+# Full Stack Open
+I started this course (Nov 6) after completing TOP's Foundation path and JavaScript section of Full Stack JavaScript. TOP gave me the foundations on how a real software engineer works in the real world. And from what I researched, FSO is a similar course like TOP that forces you to read documentation and solve projects independently, but focuses on the modern Full Stack JavaScript path. Let's get through it!
