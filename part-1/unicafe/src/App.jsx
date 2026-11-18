@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Statistics = ({feedbackCount, feedbackName}) => {
+const Statistics = ({feedbackName, feedbackCount}) => {
   return <p>{feedbackName} {feedbackCount}</p>
 }
 
@@ -12,6 +12,12 @@ const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+
+  const totalFeedback = good + neutral + bad;
+  
+  const average = (good - bad) / totalFeedback;
+
+  const positive = `${(good / totalFeedback) * 100}%`;
 
   const handleGoodFeedback = () => {
     setGood(good + 1);
@@ -38,6 +44,9 @@ const App = () => {
         <Statistics feedbackCount={good} feedbackName='Good'/>
         <Statistics feedbackCount={neutral} feedbackName='Neutral'/>
         <Statistics feedbackCount={bad} feedbackName='Bad'/>
+        <Statistics feedbackCount={totalFeedback} feedbackName='All' />
+        <Statistics feedbackCount={average} feedbackName='Average' />
+        <Statistics feedbackCount={positive} feedbackName='Positive' />
       </div>
     </div>
   )
