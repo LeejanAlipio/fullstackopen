@@ -24,19 +24,31 @@ const App = () => {
     const randomIndex = Math.floor(Math.random() * anecdotes.length);
     setSelected(randomIndex);
   };
-  
+
   const handleVote = () => {
     const copy = [...votes];
     copy[selected] += 1;
     setVotes(copy);
-  }
+  };
+
+  const highestAnecdoteVotes = votes.indexOf(Math.max(...votes));
 
   return (
     <>
+      <h2>Anecdote of the Day</h2>
       <div>{anecdotes[selected]}</div>
       <p>Has {votes[selected]} votes</p>
-      <Button onClick={handleRandomAnecdote} name='Random Quote'/>
-      <Button onClick={handleVote} name='Vote'/>
+      <Button onClick={handleRandomAnecdote} name="Random Quote" />
+      <Button onClick={handleVote} name="Vote" />
+      <h2>Anecdote with the MOST votes</h2>
+      {votes[highestAnecdoteVotes] === 0 ? (
+        <p>No votes</p>
+      ) : (
+        <>
+          <div>{anecdotes[highestAnecdoteVotes]}</div>
+          <p>Has {votes[highestAnecdoteVotes]} votes</p>
+        </>
+      )}
     </>
   );
 };
